@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang=ru>
+
+<head>
+  <meta charset="UTF-8">
+  <title>A. Даёшь адаптивность!</title>
+  <meta name="viewport" content="max-device-width">
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Noto+Sans');
+    body {
+      background: fixed url("./fon.jpg") 50%/cover no-repeat;
+      position: relative;
+    }
+
+    .sek {
+      position: relative;
+      height: 100vh;
+      margin: 0.2vh;
+      border: green solid 0.4vh;
+      border-radius: 10vh;
+      background: fixed url("./fon.jpg") 50%/cover no-repeat;
+    }
+
+    #navig {
+      text-align: center;
+      padding: 2vh;
+      height: 40vh;
+      border: green solid 0.4vh;
+      border-radius: 10vh;
+      background: greenyellow;
+      position: relative;
+    }
+
+    article {
+      height: 26vh;
+      margin: 0.4vh;
+      border: green solid 0.4vh;
+      border-radius: 10vh;
+      background: greenyellow;
+      position: relative;
+    }
+
+    h2 {
+      top: 0;
+      margin: 4vh;
+      font-family: "Noto Sans";
+      text-align: center;
+      background: rgb(103, 151, 30);
+      border-radius: 20vh;
+      color: rgb(7, 19, 70);
+    }
+
+    h3 {
+      top: 0;
+      margin: 0;
+      font-family: "Noto Sans";
+      text-align: center;
+    }
+
+    p {
+      position: absolute;
+      padding: 2vh;
+      background: rgb(206, 236, 134);
+      font-family: "Noto Sans";
+      text-align: left 1vh;
+      border-radius: 4vh;
+      left: -300vh;
+      width: 60vh;
+    }
+
+    div footer {
+      position: absolute;
+      font-family: "Noto Sans";
+      bottom: 0;
+      left: calc(50% - 10vh);
+      margin: 2vh;
+    }
+
+    #art1 {
+      position: absolute;
+      border-radius: 50%;
+      height: 20vh;
+      width: 20vh;
+      background: url("./1.jpg") 50%/cover no-repeat;
+    }
+
+    #art1:hover {
+      transform: translate(20vh, 0) scale(3, 3);
+      transition: 3s;
+      z-index: 20;
+    }
+
+    .txt1:active~.txt1_1 {
+      left: 0;
+      z-index: 20;
+      top: -10vh;
+    }
+
+    .txt1_1:hover {
+      left: 0;
+      z-index: 20;
+      top: -10vh;
+    }
+
+    #art2 {
+      position: absolute;
+      border-radius: 50%;
+      height: 20vh;
+      width: 20vh;
+      background: url("./2.jpg") 50%/cover no-repeat;
+    }
+
+    #art2:hover {
+      transform: translate(20vh, 0) scale(3, 3);
+      transition: 3s;
+      z-index: 20;
+    }
+
+    .txt2:active~.txt2_1 {
+      left: 0;
+      z-index: 20;
+      top: -10vh;
+    }
+
+    .txt2_1:hover {
+      left: 0;
+      z-index: 20;
+      top: -10vh;
+    }
+
+    #art3 {
+      position: absolute;
+      border-radius: 50%;
+      height: 20vh;
+      width: 20vh;
+      background: url("./3.jpg") 50%/cover no-repeat;
+    }
+
+    #art3:hover {
+      transform: translate(20vh, 0) scale(3, 3);
+      transition: 3s;
+      z-index: 20;
+    }
+
+    .txt3:active~.txt3_1 {
+      left: 0;
+      z-index: 20;
+      top: -10vh;
+    }
+
+    .txt3_1:hover {
+      left: 0;
+      z-index: 20;
+      top: -10vh;
+    }
+
+    #art4 {
+      position: absolute;
+      border-radius: 50%;
+      height: 20vh;
+      width: 20vh;
+      background: url("./4.jpg") 50%/cover no-repeat;
+    }
+
+    #art4:hover {
+      transform: translate(20vh, 0) scale(3, 3);
+      transition: 3s;
+      z-index: 20;
+    }
+
+    .txt4:active~.txt4_1 {
+      left: 0vh;
+      z-index: 20;
+      width: 100%;
+      top: -10vh;
+    }
+
+    .txt4_1:hover {
+      left: 0vh;
+      z-index: 20;
+      width: 100%;
+      top: -10vh;
+    }
+
+    #art5 {
+      position: absolute;
+      border-radius: 50%;
+      height: 20vh;
+      width: 20vh;
+      background: url("./5.jpg") 50%/cover no-repeat;
+    }
+
+    #art5:hover {
+      transform: translate(20vh, 0) scale(3, 3);
+      transition: 3s;
+      z-index: 20;
+    }
+
+    .txt5:active~.txt5_1 {
+      left: 0vh;
+      z-index: 20;
+      width: 100%;
+      top: -10vh;
+    }
+
+    .txt5_1:hover {
+      left: 0vh;
+      z-index: 20;
+      width: 100%;
+      top: -10vh;
+    }
+
+    #art6 {
+      position: absolute;
+      border-radius: 50%;
+      height: 20vh;
+      width: 20vh;
+      background: url("./6.jpg") 50%/cover no-repeat;
+    }
+
+    #art6:hover {
+      transform: translate(20vh, 0) scale(3, 3);
+      transition: 3s;
+      z-index: 20;
+    }
+
+    .txt6:active~.txt6_1 {
+      left: 0vh;
+      z-index: 20;
+      width: 100%;
+      top: -10vh;
+    }
+
+    .txt6_1:hover {
+      left: 0vh;
+      z-index: 20;
+      width: 100%;
+      top: -10vh;
+    }
+
+    #art7 {
+      position: absolute;
+      border-radius: 50%;
+      height: 20vh;
+      width: 20vh;
+      background: url("./7.jpg") 50%/cover no-repeat;
+    }
+
+    #art7:hover {
+      transform: translate(20vh, 0) scale(3, 3);
+      transition: 3s;
+      z-index: 20;
+    }
+
+    .txt7:active~.txt7_1 {
+      left: 0vh;
+      z-index: 20;
+      width: 100%;
+      top: -10vh;
+    }
+
+    .txt7_1:hover {
+      left: 0vh;
+      z-index: 20;
+      width: 100%;
+      top: -10vh;
+    }
+
+    #art8 {
+      position: absolute;
+      border-radius: 50%;
+      height: 20vh;
+      width: 20vh;
+      background: url("./8.jpg") 50%/cover no-repeat;
+    }
+
+    #art8:hover {
+      transform: translate(20vh, 0) scale(3, 3);
+      transition: 3s;
+      z-index: 20;
+    }
+
+    .txt8:active~.txt8_1 {
+      left: 0vh;
+      z-index: 20;
+      width: 100%;
+      top: -10vh;
+    }
+
+    .txt8_1:hover {
+      left: 0vh;
+      z-index: 20;
+      width: 100%;
+      top: -10vh;
+    }
+
+    #art9 {
+      position: absolute;
+      border-radius: 50%;
+      height: 20vh;
+      width: 20vh;
+      background: url("./9.jpg") 50%/cover no-repeat;
+    }
+
+    #art9:hover {
+      transform: translate(20vh, 0) scale(3, 3);
+      transition: 3s;
+      z-index: 20;
+    }
+
+    .txt9:active~.txt9_1 {
+      left: 0vh;
+      z-index: 20;
+      width: 100%;
+      top: -10vh;
+    }
+
+    .txt9_1:hover {
+      left: 0vh;
+      z-index: 20;
+      width: 100%;
+      top: -10vh;
+    }
+
+    #art10 {
+      position: absolute;
+      border-radius: 50%;
+      height: 20vh;
+      width: 20vh;
+      background: url("./10.jpg") 50%/cover no-repeat;
+    }
+
+    #art10:hover {
+      transform: translate(20vh, 0) scale(3, 3);
+      transition: 3s;
+      z-index: 20;
+    }
+
+    .txt10:active~.txt10_1 {
+      left: 0vh;
+      z-index: 20;
+      width: 100%;
+      top: -10vh;
+    }
+
+    .txt10_1:hover {
+      left: 0vh;
+      z-index: 20;
+      width: 100%;
+      top: -10vh;
+    }
+
+    #art11 {
+      position: absolute;
+      border-radius: 50%;
+      height: 20vh;
+      width: 20vh;
+      background: url("./11.jpg") 50%/cover no-repeat;
+    }
+
+    #art11:hover {
+      transform: translate(20vh, 0) scale(3, 3);
+      transition: 3s;
+      z-index: 20;
+    }
+
+    .txt11:active~.txt11_1 {
+      left: 0vh;
+      z-index: 20;
+      width: 100%;
+      top: -10vh;
+    }
+
+    .txt11_1:hover {
+      left: 0vh;
+      z-index: 20;
+      width: 100%;
+      top: -10vh;
+    }
+
+    #art12 {
+      position: absolute;
+      border-radius: 50%;
+      height: 20vh;
+      width: 20vh;
+      background: url("./12.jpg") 50%/cover no-repeat;
+    }
+
+    #art12:hover {
+      transform: translate(20vh, 0) scale(3, 3);
+      transition: 3s;
+      z-index: 20;
+    }
+
+    .txt12:active~.txt12_1 {
+      left: 0vh;
+      z-index: 20;
+      width: 100%;
+      top: -10vh;
+    }
+
+    .txt12_1:hover {
+      left: 0vh;
+      z-index: 20;
+      width: 100%;
+      top: -10vh;
+    }
+
+    #txt {
+      top: 0;
+      border-radius: 2vh;
+      margin-left: 21vh;
+      height: 15vh;
+      margin-right: 2vh;
+      background: rgb(206, 236, 134);
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    @media (min-width: 840px) {
+      #navig {
+        height: 25vh;
+
+      }
+      section {
+        width: 56vh;
+        top: 0;
+      }
+      div {
+        margin-top: 5vh;
+        display: inline-block;
+        top: 0;
+      }
+      p {
+        width: 110vh;
+      }
+    }
+
+    @media (min-width: 1280px) {
+      #navig {
+        height: 20vh;
+        width: 168vh;
+        padding: 3vh;
+        top: 0;
+      }
+      section {
+        width: 57vh;
+        top: 0;
+      }
+      p {
+        width: 170vh;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav id="navig">
+      <h2>Модули Arduino:</h2>
+
+      <il>
+        <a href="#art1">&nbsp;&nbsp;Arduino Uno R3.&nbsp;&nbsp;</a>
+      </il>
+      <il>
+        <a href="#art2">&nbsp;&nbsp;Arduino Mega 2560 Rev.3.&nbsp;&nbsp;</a>
+      </il>
+      <il>
+        <a href="#art3">&nbsp;&nbsp;Arduino Due.&nbsp;&nbsp;</a>
+      </il>
+      <il>
+        <a href="#art4">&nbsp;&nbsp;Драйвер Shield 30А.&nbsp;&nbsp;</a>
+      </il>
+      <il>
+        <a href="#art5">&nbsp;&nbsp;Arduino Ethernet Shield.&nbsp;&nbsp;</a>
+      </il>
+      <il>
+        <a href="#art6">&nbsp;&nbsp;LCD1602 Keypad Shield.&nbsp;&nbsp;</a>
+      </il>
+      <il>
+        <a href="#art7">&nbsp;&nbsp;Датчик дождя.&nbsp;&nbsp;</a>
+      </il>
+      <il>
+        <a href="#art8">&nbsp;&nbsp;Модуль ИК передатчика.&nbsp;&nbsp;</a>
+      </il>
+      <il>
+        <a href="#art9">&nbsp;&nbsp;Датчик влажности почвы.&nbsp;&nbsp;</a>
+      </il>
+      <il>
+        <a href="#art10">&nbsp;&nbsp;Электромотор с редуктором.&nbsp;&nbsp;</a>
+      </il>
+      <il>
+        <a href="#art11">&nbsp;&nbsp;Драйвер моторов.&nbsp;&nbsp;</a>
+      </il>
+      <il>
+        <a href="#art12">&nbsp;&nbsp;Ultrosonic sensor.&nbsp;&nbsp;</a>
+      </il>
+
+    </nav>
+  </header>
+  <main>
+
+    <div class="sek">
+      <section>
+        <h2>Контроллеры Arduino:</h2>
+        <article class="art">
+
+          <header>
+            <h3>Arduino Uno R3.</h3>
+          </header>
+
+          <div id="art1">
+          </div>
+
+          <div id="txt" class="txt1">
+            Плата Arduino Uno изготовлен на микроконтроллере ATmega328.
+          </div>
+          <p class="txt1_1">
+            &nbsp;&nbsp;
+            <b>Плата Arduino Uno </b>изготовлен на микроконтроллере ATmega328. Эта плата является наиболее популярной на данный
+            момент, так как благодаря форм-фактору на ней удобно отлаживать проекты и проводить различные эксперименты.
+            <br>&nbsp;&nbsp; Так же популярности этой платы добавляет микроконтроллер ATmega 328, который выпускается длительное
+            время и создано много проектов для него.
+            <br> На плате Arduino Uno R3 есть 20 цифровых вход/выходов из которых 6 можно задействовать как выходы ШИМ и 6 как
+            аналоговые входы.
+            <br> &nbsp;&nbsp;В отличии от всех предыдущих версий плат Arduino, в Arduino Uno в версии R3 для связи с компьютером
+            по USB использует микроконтроллерr компании Atmel ATmega16U2.
+            <br>
+            <b>&nbsp;&nbsp;Характеристики:</b>
+            <br> Микроконтроллер ATmega328
+            <br> - Рабочее напряжение 5 В
+            <br> - Входное напряжение (рекомендуемое) 7-12 В
+            <br> - Входное напряжение (предельное) 6-20 В
+            <br> - Цифровые Входы/Выходы 20, 6 из которых могут использоваться как выходы ШИМ
+            <br> - и 6 как Аналоговые входы 6
+            <br> - Постоянный ток через вход/выход 40 мА
+            <br> - Постоянный ток для вывода 3.3 В 50 мА
+            <br> - Флеш-память 32 Кб (ATmega328) из которых 0.5 Кб используются для загрузчика
+            <br> - ОЗУ 2 Кб (ATmega328)
+            <br> - EEPROM 1 Кб (ATmega328)
+            <br> - Тактовая частота 16 МГц
+            <br>
+            <b>&nbsp;&nbsp;&nbsp;&nbsp;Память.</b>
+            <br>&nbsp;&nbsp; Объем памяти для хранения программного кода проекта составляет 31,5кБ. 0,5 кБ использует бутлодер
+            (загрузчик).
+            <br>&nbsp;&nbsp;Контроллер Atmega328 также имеет SRAM память объемом 2 КБ, и энергонезависимую память EEPROM объемом
+            1 КБ. Использовать энергонезависимую память в проектах можно с помощью библиотеки EEPROM.
+            <br>
+            <b>&nbsp;&nbsp;&nbsp;&nbsp;Пины питания</b>
+            <br>
+            <b>VIN</b> – пин внешнего питания, параллелен разъему питания 5,5/2,1. Как было указано выше, Ардино может работать
+            от напряжения от 6 до 20 вольт. Но лучше использовать от 6 до 12.
+            <br>
+            <b>5V</b> – пин выхода питания со встроенного стабилизатора. При подключении кабелем USB к компьютеру, либо от питания
+            через пин VIN, либо от разъема питания, происходит стабилизация напряжения до 5 вольт. Пин можно использовать
+            для питания дополнительных микросхем, светодиодов и т.д., но не рекомендуется питать Arduino, так как это может
+            привести к повреждению контроллера.
+            <br>
+            <b>3.3V</b> – пин выхода со стабилизатора 50мА 3.3 вольта.
+            <br>
+            <b>GND</b> – пины с этой маркировкой означают выход земли.
+            <br>
+            <b>AREF</b> – пин референсного напряжения.
+          </p>
+          <footer>
+            Источник: google-shop.
+          </footer>
+
+        </article>
+
+        <article class="art">
+          <header>
+            <h3>Arduino Mega 2560 Rev.3.</h3>
+          </header>
+          <div id="art2">
+          </div>
+          <div id="txt" class="txt2">
+            На плате Arduino Mega находится 54 цифровых входа/выходов.
+          </div>
+          <p class="txt2_1">
+            <b>&nbsp;&nbsp;Arduino Mega построена на микроконтроллере ATmega2560.</b>
+            <br> &nbsp;&nbsp;Плата с большим количеством входов, а также четырьмя портами TTL позволит собрать практически любой
+            проект.
+            <br>&nbsp;&nbsp;Так же эта плата отлично подходит для изучения Ардуино.
+
+            <br>&nbsp;&nbsp;На плате Arduino Mega находится 54 цифровых входа/выходов (из них 14 можно использовать как выходы
+            ШИМ), 16 аналоговых входов, 4 последовательных порта UART, кварцевый генератор 16 МГц, разъем USB, силовой разъем,
+            разъем ICSP и кнопку перезагрузки. Один из серийных портов соединен с контроллером ATmega 16U2, который используется
+            как USB-TTL мост.
+            <br> Для работы необходимо установить среду программирования Arduino, подключить плату к компьютеру посредством кабеля
+            USB (поставляется в комплекте) или подать питание при помощи адаптера AC/DC, или аккумуляторной батареей.
+            <br> Драйвер, как правило, уже установлен в операционной системе, либо его можно найти в папке Drivers среды программирования.
+            Arduino Mega совместима со всеми платами расширения - шилдами, разработанными для платформ UNO, Leonardo R3,
+            Duemilanove или Diecimila.
+            <br>
+            <b>&nbsp;&nbsp;Микроконтроллер ATmega2560</b>
+
+            <br>- Рабочее напряжение 5В.
+            <br>- Входное напряжение (рекомендуемое) 7-12В.
+            <br>- Входное напряжение (предельное) 6-20В.
+            <br>- Цифровые Входы/Выходы 54 (14 из которых могут использоваться как выходы ШИМ).
+            <br>- Количество аппаратных serial-портов 4.
+            <br>- Аналоговые входы 16.
+            <br>- Постоянный ток через вход/выход 40 mA.
+            <br>- Постоянный ток для вывода 3.3 В 50 mA.
+            <br>- Флеш-память 256 KB (4 используются для загрузчика).
+            <br>- ОЗУ 8 KB.
+            <br>- Энергонезависимая память 4 KB.
+            <br> Тактовая частота 16 MHz.
+          </p>
+
+          <footer>
+            Источник: google-shop.
+          </footer>
+
+        </article>
+
+        <article class="art">
+          <header>
+            <h3>Arduino Due.</h3>
+          </header>
+          <div id="art3">
+          </div>
+          <div id="txt" class="txt3">
+            Это первая плата Arduino на основе 32-битного.
+          </div>
+          <p class="txt3_1">
+            <br>&nbsp;&nbsp;
+            <b>Arduino Due</b> — плата микроконтроллера на базе процессора Atmel SAM3X8E ARM Cortex-M3.
+            <br>&nbsp;&nbsp;Это первая плата Arduino на основе 32-битного микроконтроллера с ARM ядром.
+            <br>&nbsp;&nbsp;На ней имеется 54 цифровых входов/выходов (из них 12 можно задействовать под выходы ШИМ), 12 аналоговых
+            входов, 4 UARTа (аппаратных последовательных порта), a генератор тактовой частоты 84 МГц, связь по USB с поддержкой
+            OTG, 2 ЦАП (цифро-аналоговых преобразователя), 2 TWI, разъем питания, разъем SPI, разъем JTAG, кнопка сброса
+            и кнопка стирания.
+            <br>&nbsp;&nbsp;Плата содержит все, что необходимо для поддержки микроконтроллера. Чтобы начать работу с ней, достаточно
+            просто подключить её к компьютеру кабелем микро-USB, либо подать питание с AC/DC преобразователя или батарейки.
+            Due совместим со всеми платами расширения Arduino, работающими от 3,3 В, и с цоколевкой Arduino 1.0.
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;
+            <b>Внимание!</b> В отличие от других плат Arduino, Arduino Due работает от 3,3 В. Максимальное напряжение, которое
+            выдерживают вход/выходы составляет 3,3 В. Подав более высокое напряжение, например, 5 В, на выводы Arduino Due,
+            можно повредить плату.
+            <br>
+            <b>&nbsp;&nbsp;&nbsp;&nbsp;Характеристики Микроконтроллер AT91SAM3X8E.</b>
+            <br>- Рабочее напряжение 3,3 В.
+            <br>- Входное напряжение (рекомендуемое) 7-12 В.
+            <br>- Входное напряжение (предельное) 6-20 В.
+            <br>- Цифровые Входы/Выходы 54 (на 12 из которых реализуется выход ШИМ).
+            <br>- Аналоговые входы 12.
+            <br>- Аналоговые выходы 2 (ЦАП).
+            <br>- Общий выходной постоянный ток.
+            <br>- на всех входах/выходах 50 мА.
+            <br>- Постоянный ток через вывод 3,3 В 800 мА.
+            <br>- Постоянный ток через вывод 5 В 800 мА.
+            <br>- Флеш-память 512 КБ доступно всего для пользовательских приложений.
+            <br>- ОЗУ 96 КБ (два банка: 64 КБ и 32 КБ).
+            <br>- Тактовая частота 84 МГц.
+          </p>
+          <footer>
+            Источник: google-shop.
+          </footer>
+
+        </article>
+      </section>
+    </div>
+    <div class="sek">
+      <section>
+        <h2>Arduino shield.</h2>
+        <article class="art">
+          <header>
+            <h3>Драйвер Shield 30А.</h3>
+          </header>
+          <div id="art4"></div>
+          <div id="txt" class="txt4">
+            Monster Motor Shield - плата для управления двумя двигателями для Arduino.
+          </div>
+          <p class="txt4_1">
+            <b>&nbsp;&nbsp;Monster Motor Shield</b> - плата для управления двумя двигателями постоянного тока для Arduino (номинальные
+            значения: 14А, 5.5...16В) на базе двух мощных драйверов VNH2SP30.
+            <br>
+            <b>&nbsp;&nbsp;Основные характеристики:</b>
+            <br>- номинальный ток: 14А абс. максимум: 30А.
+            <br>- номинальное напряжение: 5,5...16В абс. максимум: 41В.
+            <br>- максимальная частота ШИМ: 20 кГц.
+            <br>- защита от перенапряжения.
+            <br>- защита от перегрева.
+            <br>- защита по току.
+          </p>
+          <footer>
+            Источник: google-shop.
+          </footer>
+
+        </article>
+
+        <article class="art">
+          <header>
+            <h3>Arduino Ethernet Shield.</h3>
+          </header>
+          <div id="art5">
+          </div>
+          <div id="txt" class="txt5">
+            Arduino Ethernet Shield совместим с Arduino Mega.
+          </div>
+          <p class="txt5_1">
+            <br>
+            <b>- Arduino Ethernet Shield совместим с Arduino Mega.</b>
+            <br>Ethernet Shield дает вам возможность подключать Arduino к интернету. Этот шилд расширяет возможности Arduino
+            и позволяет отсылать и принимать данные из любой точки мира, где есть интернет.
+            <br>Например, можно удаленно управлять вашим роботом с веб-сайта или реализовать какой-то сигнал, когда приходит
+            новое сообщение в ваш твиттер. Ethernet Shield открывает перед вами бесконечное количество новых возможностей.
+            <br>
+            <b>&nbsp;&nbsp;Технические характеристики Ethernet шилда:</b>
+            <br>- Ethernet Shield основан на чипе W51000, который имеет внутренний буфер на 16К.
+            <br>- Скорость подключения достигает 10/100Мб.
+            <br>- Это не самое быстрое соединение, но этого вполне достаточно, поверьте.
+            <br>
+            <b>-Разъем для microSD карт памяти.</b>
+          </p>
+          <footer>
+            Источник: google-shop.
+          </footer>
+
+        </article>
+
+        <article class="art">
+          <header>
+            <h3>LCD1602 Keypad Shield.</h3>
+          </header>
+          <div id="art6">
+          </div>
+          <div id="txt" class="txt6">
+            Плата расширения (Shield) LCD1602 Keypad. Cовместима с Arduino Mega.
+          </div>
+          <p class="txt6_1">
+            <br>
+            <b>&nbsp;&nbsp;Плата расширения (Shield) LCD1602 Keypad:</b>
+            <br>- совместима с Arduino Mega, Arduino Uno.
+            <br>- 2 строки, 16 символов.
+            <br>- регулировка яркости подсветки.
+            <br>- регулировка контаста.
+            <br>- клавиши управления (UP, DOWN, LEFT, RIGHT, SELECT, RESET).
+            <br>- Рабочее напряжение 4.5-5.5v.
+            <br>- Потребление 2.0mA (5.0V).
+            <br>- Используются 14 стандартных пинов (без подсветки) и 16 пинов с подсветкой.
+            <br>
+            <b>Основные технические характеристики:</b>
+            <br>• Дисплей синего цвета с белыми буквами. Регулировка яркости подсветки.
+            <br>• Тип дисплея: Символьный.
+            <br>• Разрешение:16x2.
+            <br>• 6 кнопок.
+            <br>• Питание дисплея: 5 Вольт
+            <br>• Работа дисплея: в 4 битном режиме.
+            <br> Цифровые пины 4, 5, 6, 7, 8, 9 задействованы для управления LCD, цифровой пин 10 управляет яркостью подсветки
+            дисплея. На аналоговый пин 0 считываются сигналы с кнопок. Дисплей в данной сборке работает в четырех битном
+            режиме.
+            <br>Подключение производится одним движением, необходимо просто состыковать шилд с платой из семейства Arduino (Diecimila,
+            Duemilanove, UNO, Mega, Mega2560, Mega ADK).
+          </p>
+          <footer>
+            Источник: google-shop.
+          </footer>
+
+        </article>
+      </section>
+    </div>
+    <div class="sek">
+      <section>
+        <h2>Датчики и сенсоры.</h2>
+        <article class="art">
+          <header>
+            <h3>Датчик дождя.</h3>
+          </header>
+          <div id="art7">
+          </div>
+          <div id="txt" class="txt7">
+            Датчик дождя (Raindrops Detection Module).
+          </div>
+          <p class="txt7_1">
+            <br>
+            <b>&nbsp;&nbsp;Датчик дождя (Raindrops Detection Module)</b> позволяет определить наличие и кол-во воды на сенсоре.
+            <br>
+            <b>&nbsp;&nbsp;Описание:</b>
+            <br>1.размер PCB платы: 3.2cmX1.4cm
+            <br>2.Напряжение:3.3V~5V
+            <br>3.Выходы: цифровые (0 и 1) и аналоговый AO выход
+            <br>4. Чистый сигнал с выхода компаратора, низкое энергоптребление - 15 мА
+            <br>5. Сенсор смонтироан на высококачественной двухсторонней монтажной плате FR - 04 размером 5.5 * 4.0 см 6. Отверстия
+            для удобного монтажа.
+            <br>7. Чувствительность регулируется потенциометром
+            <br> 8. Компаратор LM393 с широким диапозоном напряжений
+            <br>
+            <b>&nbsp;&nbsp;Как использовать:</b>
+            <br>1. Подключите к источнику питания с напряжением 5 вольт, загорится индикатор питания. Пока на поверхности датчика
+            нет воды на выводе DO логическая еденица (High), светодиоды воды НЕ горят. При появлении воды на поврхности на
+            выводе DO появляется логический 0 (Low), загоряются индикаторы воды.
+            <br>2. После удаления воды датчик возвразается в первоначальное состояние.
+            <br>4. Цифровой вывод DO имеет TTL уровень и так же может быть подключен к Arduino или другому микроконтроллеру.
+          </p>
+          <footer>
+            Источник: google-shop.
+          </footer>
+
+        </article>
+
+        <article class="art">
+          <header>
+            <h3>Модуль ИК передатчика.</h3>
+          </header>
+          <div id="art8">
+          </div>
+          <div id="txt" class="txt8">
+            Модуль ИК передатчика - IR трансмитер для Arduino.
+          </div>
+          <p class="txt8_1">
+            <br>
+            <b>&nbsp;&nbsp;Модуль ИК передатчика-</b> IR трансмитер для Arduino.
+            <br>Часто та 38мГц.
+            <br>Материал PCB.
+            <br>Полезный модуль для DIY.
+            <br> Широко применяется в робото строении и домашней автоматизации.
+          </p>
+          <footer>
+            Источник: google-shop.
+          </footer>
+
+        </article>
+
+        <article class="art">
+          <header>
+            <h3>Датчик влажности почвы.</h3>
+          </header>
+          <div id="art9">
+          </div>
+          <div id="txt" class="txt9">
+            Датчик влажности почвы — сенсор для определения влажности земли.
+          </div>
+          <p class="txt9_1">
+            <br>
+            <b>&nbsp;&nbsp;Датчик влажности почвы—</b> сенсор для определения влажности земли, в которую он погружен. Датчик
+            позволит узнать о недостаточном или избыточном поливе ваших растений.
+            <br>Если почва сухая, то сопротивление датчика велико. Если земля влажная, то сопротивление низкое. Измеряя это сопротивление
+            можно судить о степени влажности почвы.
+            <br>Датчик влажности поможет вам определить влажность почвы и подобрать именно тот способ полива, который необходим
+            для Ваших растений.
+            <br>
+            <b>&nbsp;&nbsp;Характеристики</b>
+            <br>- Напряжение питания 3,3 — 5 В.
+            <br>- Цифровой выход.
+            <br>- Аналоговый выход.
+            <br>- Потонциометр для регулировки чувствительности.
+            <br>- Индикатор питания.
+            <br>- Индикатор срабатывания датчика.
+            <br>- Аналоговый выход служит для точного измерения влажности почвы.
+            <br>- При использовании цифрового выхода датчика, можно на прямую без использования контроллера управлять модулем
+            реле.
+            <br>- Датчик работает с любыми контроллерами имеющими встроенный АЦП, в том чиле и Arduino.
+
+
+          </p>
+          <footer>
+            Источник: google-shop.
+          </footer>
+
+        </article>
+      </section>
+    </div>
+
+    <div class="sek">
+      <section>
+        <h2>Детали для роботов.</h2>
+        <article class="art">
+          <header>
+            <h3>Электромотор с редуктором.</h3>
+          </header>
+          <div id="art10">
+          </div>
+          <div id="txt" class="txt10">
+            Мини электромотор с редуктором Напряжение питания: от 3в до 6в.
+          </div>
+          <p class="txt10_1">
+            <br>
+            <b>&nbsp;&nbsp;Мини электромотор с редуктором.</b>
+            <br>- Напряжение питания: от 3в до 6в.
+            <br>- Скорость вращения мотора без редуктора: 11500 rpm.
+            <br>- Скорость вращения выходного вала после редуктора 40 rpm.
+            <br>- Крутящий момент: 2,3 кг. см.
+            <br>- Выходной вал диаметром: 3mm .
+            <br>- Вес: 11гр.
+            <br>- Габаритный размер: 32 х 12 х 10 мм.
+          </p>
+          <footer>
+            Источник: google-shop.
+          </footer>
+
+        </article>
+
+        <article class="art">
+          <header>
+            <h3>Драйвер моторов.</h3>
+          </header>
+          <div id="art11">
+          </div>
+          <div id="txt" class="txt11">
+            Драйвер моторов (Motor Shield V.2) для Arduino.
+          </div>
+          <p class="txt11_1">
+            <br>
+            <b>&nbsp;&nbsp;Драйвер моторов (Motor Shield V.2) для Arduino</b>
+            <br> Позволяет управлять скоростью и направлением вращения мотора с помощью логических сигналов микроконтроллера.
+            <br> На сегодняшний день, самым популярным H-мостом, является Motor Shield — плата расширения для Arduino на базе
+            двух чипов L298D, что дает Вам возможность управлять 4-я моторами или 2-я шаговыми двигателями
+            <br> Основные элементы платы: 2 микросхемы L293D и сдвиговый регистр 74HC595
+            <br>
+            <b>&nbsp;&nbsp;Технические характеристики</b>
+            <br>- напряжение питания: +4,5...+ 25 В.
+            <br>- количество силовых каналов: 4.
+            <br>- количество подключаемых моторов 4 шт.
+            <br>- количество подключаемых шаговых двигателей 2шт.
+            <br>- количество подключаемых сервомоторов 2шт.
+            <br>- максимально-продолжительный ток каждого канала: 0,6 А.
+            <br>- пиковый ток: 1.2А.
+            <br>- возможность реверса каждого двигателя.
+            <br>- возможность независимого управления каждым каналом.
+            <br>- модуль полностью совместим со всеми известными моделями Arduino.
+            <br>- Для удобства использования Motor Shield V.2 драйвера, нужно скачать библиотеку с примерами AFMotor.
+          </p>
+          <footer>
+            Источник: google-shop.
+          </footer>
+
+        </article>
+
+        <article class="art">
+          <header>
+            <h3>Ultrosonic sensor.</h3>
+          </header>
+          <div id="art12">
+          </div>
+          <div id="txt" class="txt12">
+            Ультразвуковой дальномер HC-SR04 используется для измерения расстояний.
+          </div>
+          <p class="txt12_1">
+            <br>
+            <b>&nbsp;&nbsp;Ультразвуковой дальномер HC-SR04.</b>
+            <br>- используется для измерения расстояний.
+            <br>- Идеальный датчик для построения робота.
+            <br>- Напряжение питания: 5V.
+            <br>- Ток покоя:2 мА.
+            <br>- Эффективный угол обзора:15°.
+            <br>- Диапазон измерений: 2 см - 400 см.
+            <br>- Разрешение: 0,3 см
+          </p>
+          <footer>
+            Источник: google-shop.
+          </footer>
+
+        </article>
+      </section>
+    </div>
+  </main>
+  <footer>
+    Автор сайта: Бошков Иван.
+    <br>Data: 18.04.2018
+  </footer>
+</body>
+
+</html>
